@@ -13,6 +13,7 @@ const dotbtn = document.querySelector("#dot");
 const clearBtn = document.querySelector("#ac");
 const signBtn = document.querySelector("#plus-minus");
 const percentBtn = document.querySelector("#mod");
+const deleteBtn = document.querySelector("#del");
 
 //Function to append the numbers in display
 function handleNumber(number) {
@@ -168,4 +169,20 @@ percentBtn.addEventListener("click", () => {
         } else {
             display.textContent = currentNum;
         }
+})
+
+deleteBtn.addEventListener("click", () => {
+    if(currentNum !== "") {
+        currentNum = currentNum.slice(0, -1);
+
+        if(previousNum !== "" && operator !== "") {
+            display.textContent = `${previousNum} ${operator} ${currentNum}`;
+        } else {
+            if(currentNum === "") {
+                display.textContent = "0";
+            } else {
+                display.textContent = currentNum;
+            }
+        }
+    }
 })
