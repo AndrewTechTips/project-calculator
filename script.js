@@ -11,7 +11,8 @@ const operators = document.querySelectorAll(".operation");
 const equalBtn = document.querySelector("#equal");
 const dotbtn = document.querySelector("#dot");
 const clearBtn = document.querySelector("#ac");
-
+const signBtn = document.querySelector("#plus-minus");
+const percentBtn = document.querySelector("#mod");
 
 //Function to append the numbers in display
 function handleNumber(number) {
@@ -129,4 +130,33 @@ clearBtn.addEventListener("click", () => {
     operator = "";
 
     display.textContent = "0";
+})
+
+signBtn.addEventListener("click", () => {
+    
+    if(currentNum === "") {
+        return;
+    }
+
+    currentNum = (parseFloat(currentNum) * -1).toString();
+
+    if(previousNum !== "" && currentNum !== "") {
+            display.textContent = `${previousNum} ${operator} ${currentNum}`;
+        } else {
+            display.textContent = currentNum;
+        }
+})
+
+percentBtn.addEventListener("click", () => {
+    if(currentNum === ""){
+        return;
+    }
+
+    currentNum = (parseFloat(currentNum) / 100).toString()
+
+    if(previousNum !== "" && currentNum !== "") {
+            display.textContent = `${previousNum} ${operator} ${currentNum}`;
+        } else {
+            display.textContent = currentNum;
+        }
 })

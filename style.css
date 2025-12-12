@@ -77,7 +77,7 @@ body {
     background-color: #333333;
 }
 
-.operation, #equal, #dot{
+.operation, #equal, #dot, #plus-minus{
     background-color: #ff9f0a;
 }
 
