@@ -82,7 +82,7 @@ function operate() {
         case "-":
             result = num1 - num2;
             break;
-        case "X":
+        case "x":
             result = num1 * num2;
             break;
         case "÷":
