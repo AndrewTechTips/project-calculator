@@ -41,3 +41,47 @@ body {
 
     overflow: hidden;
 }
+
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.btn {
+    width: 21%;     /*4 buttons on a row, so 100% / 4 means 25 but with the gap we have ~ 22% button width*/
+
+    border-radius: 50%;
+    aspect-ratio: 1;  /*We make height = width*/
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    transform: scale(0.95);
+}
+
+.btn:active {
+    filter: brightness(0.9);
+}
+
+.number {
+    background-color: #333333;
+}
+
+.operation {
+    background-color: #ff9f0a;
+}
+
+#ac, #del, #mod {
+    background-color: #555555;
+    color: white;
+}
