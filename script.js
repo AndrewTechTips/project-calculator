@@ -104,7 +104,14 @@ function operate() {
 
     result = Math.round(result * 1000) / 1000;
 
-    currentNum = result.toString();
+    let resultString = result.toString();
+
+    if(resultString.length > 10) {
+        currentNum = result.toExponential(4);
+    } else {
+        currentNum = resultString;
+    }
+
     operator = "";
     previousNum = "";
 
