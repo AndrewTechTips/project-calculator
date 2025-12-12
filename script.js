@@ -37,7 +37,17 @@ numberButtons.forEach((btn) => {
 //Function to handle the operator
 function handleOperator(op) {
 
-    if(currentNum === "") {     //Prevent the operator functionaliy if there is not a current number
+    if(!previousNum !== "" && currentNum !== "" && operator != ""){
+        operate();
+    }
+
+    if(currentNum === "" && previousNum === "") {     //Prevent the operator functionaliy if there is not a current number
+        return;
+    }
+
+    if(currentNum === "") {
+        operator = op;
+        display.textContent = `${previousNum} ${operator}`;
         return;
     }
 
@@ -46,7 +56,6 @@ function handleOperator(op) {
     currentNum = "";
 
     display.textContent = `${previousNum} ${operator}`;
-
 }
 
 operators.forEach((btn) => {
